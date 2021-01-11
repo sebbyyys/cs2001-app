@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-function RepCounter() {
+function SignIn() {
   return (
     <div className="App">
-      <h1>Sign In Page</h1>
+    <h1>Sign-In</h1>
     </div>
   );
 }
 
-export default RepCounter;
+export default SignIn;
 

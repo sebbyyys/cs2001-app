@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Link, withRouter } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import Login from './Login.js';
+import Logout from './Logout.js';
 
 function Nav() {
     const navStyle = {
@@ -25,9 +27,8 @@ function Nav() {
                 <Link to="/Dashboard" style={navStyle}>
                     <li>Dashboard</li>
                 </Link>
-                <Link to="/Sign-In" style={navStyle}>
-                    <li>Sign-Up/Sign-In Page</li>
-                </Link>
+                <Login />
+                <Logout />
             </ul>
         </nav >
     )

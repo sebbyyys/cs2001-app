@@ -10,12 +10,15 @@ import { Card } from "react-bootstrap";
 import Footer from './Footer.js';
 import SignIn from './SignIn.js';
 import { Button } from "react-bootstrap";
+import Login from './Login.js';
+import Logout from './Logout.js';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Nav />
+        <div className="Container">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/Exercises" component={Exercises} />
@@ -23,6 +26,7 @@ function App() {
           <Route path="/Dashboard" component={Dashboard} />
           <Route path="/Sign-In" component={SignIn} />
         </Switch>
+        </div>
       </div>
     </Router>
   );
