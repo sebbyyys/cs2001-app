@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
-import Nav from './Nav.js';
-import Dashboard from './Dashboard.js';
-import Exercises from './Exercises.js';
-import RepCounter from './RepCounter.js';
+import Nav from './Components/Nav/Nav.js';
+import Dashboard from './Components/Dashboard/Dashboard.js';
+import Exercises from './Components/Exercises/Exercises.js';
+import RepCounter from './Components/RepCounter/RepCounter.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { CardDeck } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import Footer from './Footer.js';
+import Footer from './Components/Footer/Footer.js';
 import SignIn from './SignIn.js';
 import { Button } from "react-bootstrap";
-import Login from './Login.js';
-import Logout from './Logout.js';
+import Login from './Components/Nav/Login.js';
+import Logout from './Components/Nav/Logout.js';
 
 function App() {
   return (
