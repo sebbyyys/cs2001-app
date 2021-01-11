@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link} from 'react-router-dom';
 import Login from './Login.js';
 import Logout from './Logout.js';
 
 function Nav() {
+
+    const [isLoggedIn, setLogin] = useState(false);
+
     const navStyle = {
         color: 'white'
     };
@@ -26,8 +29,8 @@ function Nav() {
                 <Link to="/Dashboard" style={navStyle}>
                     <li>Dashboard</li>
                 </Link>
-                <Login />
-                <Logout />
+                { isLoggedIn ? <Logout login={isLoggedIn} setLogin={setLogin}/> : 
+                <Login login={isLoggedIn} setLogin={setLogin}/>}
             </ul>
         </nav >
     )
