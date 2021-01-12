@@ -12,6 +12,7 @@ function Nav() {
         if (isLoggedIn) {
             history.push('/Dashboard');
         } else {
+            history.push('/');
             console.log("in else statement");
         }
     }, [isLoggedIn])
