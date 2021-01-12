@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
-import { Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import Login from './Login.js';
 import Logout from './Logout.js';
 
 function Nav() {
 
     const [isLoggedIn, setLogin] = useState(false);
+    let history = useHistory();
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            history.push('/Dashboard');
+        } else {
+            console.log("in else statement");
+        }
+    }, [isLoggedIn])
 
     const navStyle = {
         color: 'white'
