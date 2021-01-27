@@ -1,49 +1,119 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import Login from './Login.js';
-import Logout from './Logout.js';
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import Login from "./Login.js";
+import Logout from "./Logout.js";
+import { makeStyles } from "@material-ui/core/styles";
+import { AppBar, Box, Toolbar, Typography, Grid } from "@material-ui/core";
+import { Paper, Tabs, Tab } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  appBar: {},
+  tabs: {
+    "& button:focus": {
+      outline: "none",
+    },
+    // MuiTabTextColorSecondaryMuiSelected: "black"
+  },
+}));
 
 function Nav() {
+  const classes = useStyles();
+  const [isLoggedIn, setLogin] = useState(false);
+  let history = useHistory();
 
-    const [isLoggedIn, setLogin] = useState(false);
-    let history = useHistory();
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     history.push("/Dashboard");
+  //   } else {
+  //     history.push("/");
+  //     console.log("in else statement");
+  //   }
+  // }, [isLoggedIn]);
 
-    useEffect(() => {
-        if (isLoggedIn) {
-            history.push('/Dashboard');
-        } else {
-            history.push('/');
-            console.log("in else statement");
-        }
-    }, [isLoggedIn])
+  const [value, setValue] = React.useState(0);
 
-    const navStyle = {
-        color: 'white'
-    };
+  const handleChange = (event, newValue) => {
+    history.push(tabNameToIndex[newValue]);
+    setValue(newValue);
+  };
 
-    return (
-        <nav>
-            <h3>Group Web App</h3>
-            <p></p>
-            <p></p>
-            <ul className="nav-links">
-                <Link to="/" style={navStyle} >
-                    <li>Home</li>
-                </Link>
-                <Link to="/Exercises" style={navStyle} >
-                    <li>Exercises</li>
-                </Link>
-                <Link to="/Rep-Counter" style={navStyle}>
-                    <li>Rep Counter</li>
-                </Link>
-                <Link to="/Dashboard" style={navStyle}>
-                    <li>Dashboard</li>
-                </Link>
-                { isLoggedIn ? <Logout login={isLoggedIn} setLogin={setLogin}/> : 
-                <Login login={isLoggedIn} setLogin={setLogin}/>}
-            </ul>
-        </nav >
-    )
+  const tabNameToIndex = {
+    0: "",
+    1: "Exercises",
+    2: "RepCounter",
+    3: "Dashboard",
+    4: "Login",
+  };
+
+  const indexToTabName = {
+    Home: 0,
+    Exercises: 1,
+    RepCounter: 2,
+    Dashboard: 3,
+    Login: 4,
+  };
+
+  return (
+    <>
+      <AppBar className={classes.appBar} position="sticky">
+        <Toolbar color="inherit">
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
+            <Grid item xs sm md>
+              <Typography type="title" align="left" variant="h4" fontWeightBold>
+                Home Fitness
+              </Typography>
+            </Grid>
+            <Grid item xs sm md>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                centered
+                className={classes.tabs}
+              >
+                <Tab label="Home" />
+                <Tab label="Exercises" />
+                <Tab label="Rep Counter" />
+                <Tab label="Dashboard" />
+                <Tab
+                  icon={
+                    isLoggedIn ? (
+                      <Logout login={isLoggedIn} setLogin={setLogin} />
+                    ) : (
+                      <Login login={isLoggedIn} setLogin={setLogin} />
+                    )
+                  }
+                />
+              </Tabs>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
+
+      {/* <Paper className={classes.root}>
+        <Tabs
+          value={value}
+          variant="fullWidth"
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          centered
+          className={classes.tabs}
+        >
+          <Tab label="Home" />
+          <Tab label="Exercises" />
+          <Tab label="Rep Counter" />
+          <Tab label="Dashboard" />
+          <Tab icon={isLoggedIn ? <Logout login={isLoggedIn} setLogin={setLogin}/> :
+            <Login login={isLoggedIn} setLogin={setLogin}/>} />
+        </Tabs>
+      </Paper> */}
+    </>
+  );
 }
 
 export default Nav;
