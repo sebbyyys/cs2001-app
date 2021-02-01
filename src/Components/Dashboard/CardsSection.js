@@ -1,37 +1,46 @@
 import React from 'react';
-import { Card } from '@uifabric/react-cards';
 import { Text, initializeIcons } from '@fluentui/react';
-import 'office-ui-fabric-core/dist/css/fabric.css';
+import { Card } from '@uifabric/react-cards';
+import 'office-ui-fabric-react/dist/css/fabric.css';
+import './styles/CardsSection.css';
+import { useMediaPredicate } from "react-media-hook";
+
 
 const container = {
     display: 'flex',
     justifyContent: 'center',
-    margin: '10vh 0',
-}
+    margin: '5vh 0',
+    paddingBottom: 20,
+};
+
 
 const icon = {
     fontSize: 24,
     padding: 15,
-    verticalAllign: 'middle',
+    verticalAlign: 'middle',
     paddingLeft: 0,
-    color: '#0078d4',
+    color: '#0078d4'
 }
 
 const styles = {
     cardStyles: {
         root: {
-            backgroundColor: 'white',
-            padding: 20,
-            borderTop: '5px solid #0078d4',
-            width: '90%',
+            background: 'white',
+            paddingBottom: 35,
+            borderTop: '7px solid #0078d4',
+            width: '100%',
             maxWidth: '90%',
-            margin: 'auto',
+            display: 'block',
         }
     },
     header: {
         root: {
             fontSize: 20,
-            fontWeight: 'bold,'
+            fontWeight: 'bold',
+            textAlign: 'center',
+            margin: 'auto',
+            display: 'flex',
+            justifyContent: 'center',
         }
     },
     amount: {
@@ -39,70 +48,73 @@ const styles = {
             fontSize: 26,
             paddingBottom: 20,
             paddingTop: 30,
+            justifyContent: 'center',
         }
     },
-    percentage: {
+    link: {
         root: {
             fontSize: 16,
             fontWeight: 'bold',
             color: '#0078d4',
+            textDecoration: 'underline',
+            margin: 'auto',
+            paddingBottom: 10,
         }
-
     }
-}
-
+};
 
 const cards = [
     {
-        title: 'Example 1',
-        amount: '£12,345',
+        title: 'Placeholder 1',
+        amount: '12345',
         icon: 'Money',
-        percentage: '2.3',
+        link: 'Link 1',
     },
     {
-        title: 'Example 2',
-        amount: '£12,345',
-        icon: 'Money',
-        percentage: '2.3',
+        title: 'Placeholder 2',
+        amount: '12345',
+        icon: 'PaymentCard',
+        link: 'Link 2'
     },
     {
-        title: 'Example 3',
-        amount: '£12,345',
-        icon: 'Money',
-        percentage: '2.3',
+        title: 'Placeholder 3',
+        amount: '12345',
+        icon: 'Savings',
+        link: 'Link 3'
     },
-    {
-        title: 'Example 4',
-        amount: '£12,345',
-        icon: 'Money',
-        percentage: '2.3',
-    }
+     
 ]
 
 const CardsSection = () => {
     initializeIcons();
     return (
         <div style={container}>
-            {cards.map((card) => {
-                <div className="s-Grid-col ms-sm33 ms-xl3">
+            {cards.map((card) => (
+                <div className="s-Grid-col ms-sm3 ms-xl3">
                     <Card styles={styles.cardStyles}>
                         <Card.Section>
                             <Card.Item>
                                 <i style={icon} className={'ms-Icon ms-Icon--${card.icon}'} aria-hidden="true"></i>
-                                <Text styles={styles.header}>{card.title}</Text>
+                                <Text styles={styles.header}>{card.title}
+
+                                </Text>
                             </Card.Item>
                             <Card.Item>
-                                <Text styles={styles.amount}>{card.amount}</Text>
+                                <Text styles={styles.amount}>{card.amount}
+
+                                </Text>
                             </Card.Item>
                             <Card.Item>
-                                <Text styles={styles.percentage}>{card.percentage}</Text>
+                                <Text styles={styles.link}>
+                                    {card.link}
+                                </Text>
                             </Card.Item>
                         </Card.Section>
                     </Card>
                 </div>
-            })}
+            ))}
         </div>
-    )
-}
+    );
+};
 
 export default CardsSection;

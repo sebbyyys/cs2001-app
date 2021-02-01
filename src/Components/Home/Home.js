@@ -8,7 +8,6 @@ import {
   CardContent,
   CardActions,
   Button,
-  Avatar,
 } from "@material-ui/core";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import heroImage from "./heroBackground.jpg";

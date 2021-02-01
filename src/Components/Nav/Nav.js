@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import Login from "./Login.js";
 import Logout from "./Logout.js";
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Box, Toolbar, Typography, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Grid } from "@material-ui/core";
 import { Tabs, Tab } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -42,13 +42,6 @@ function Nav() {
     1: "Exercises",
     2: "RepCounter",
     3: "Dashboard",
-  };
-
-  const indexToTabName = {
-    Home: 0,
-    Exercises: 1,
-    RepCounter: 2,
-    Dashboard: 3,
   };
 
   return (

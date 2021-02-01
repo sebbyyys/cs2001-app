@@ -1,11 +1,5 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
-import { Paper, Tabs, Tab } from "@material-ui/core";
-import { withRouter } from 'react-router-dom';
-import { AirlineSeatIndividualSuiteSharp } from "@material-ui/icons";
-
-
-
 
  const clientId =
   "992813111921-9t3j7kh7vd4b77aren96cct2d38ebdsh.apps.googleusercontent.com";

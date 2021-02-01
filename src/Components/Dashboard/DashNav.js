@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav, initializeIcons } from '@fluentui/react';
-import Dashboard from './Dashboard';
-import { Router } from 'react-router-dom';
+
 
 const links = [
     {
@@ -22,7 +21,7 @@ const links = [
             },
             {
                 name: 'Settings',
-                url: '/Dashboard/Tasks',
+                url: '/Dashboard',
                 key: 'key2',
                 iconProps: {
                     iconName: 'PlayerSettings',
@@ -36,7 +35,7 @@ const links = [
             },
             {
                 name: 'Transfer',
-                url: '/Dashboard/Goals',
+                url: '/Dashboard',
                 key: 'key3',
                 iconProps: {
                     iconName: 'SwitcherStartEnd',
@@ -50,7 +49,7 @@ const links = [
             },
             {
                 name: 'Stats',
-                url: '/Dashboard/Profile',
+                url: '/Dashboard',
                 key: 'key4',
                 iconProps: {
                     iconName: 'StackedLineChart',
@@ -69,8 +68,9 @@ const links = [
 const navigationStyles = {
     root: {
         height: '100vh',
-        boxSizing: 'border-box',
-        border: '1px solid #eee',
+        boxSizing: 'auto-align',
+        border: '5px solid #eee',
+        position: 'fixed',
         overflowY: 'auto',
         paddingTop: '10vh',
     }
@@ -78,8 +78,8 @@ const navigationStyles = {
 
 const Dash = () => {
     initializeIcons();
-    return(
-        <Nav 
+    return (
+        <Nav
             groups={links}
             selectedKey="Key1"
             styles={navigationStyles}
