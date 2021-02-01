@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Login from "./Login.js";
 import Logout from "./Logout.js";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Box, Toolbar, Typography, Grid } from "@material-ui/core";
-import { Paper, Tabs, Tab } from "@material-ui/core";
+import { Tabs, Tab } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {},
@@ -21,14 +21,14 @@ function Nav() {
   const [isLoggedIn, setLogin] = useState(false);
   let history = useHistory();
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     history.push("/Dashboard");
-  //   } else {
-  //     history.push("/");
-  //     console.log("in else statement");
-  //   }
-  // }, [isLoggedIn]);
+   useEffect(() => {
+     if (isLoggedIn) {
+       history.push("/Dashboard");
+     } else {
+       history.push("/");
+       console.log("in else statement");
+     }
+   }, [isLoggedIn]);
 
   const [value, setValue] = React.useState(0);
 
@@ -42,7 +42,6 @@ function Nav() {
     1: "Exercises",
     2: "RepCounter",
     3: "Dashboard",
-    4: "Login",
   };
 
   const indexToTabName = {
@@ -50,7 +49,6 @@ function Nav() {
     Exercises: 1,
     RepCounter: 2,
     Dashboard: 3,
-    Login: 4,
   };
 
   return (
