@@ -1,15 +1,18 @@
-import { render } from "@testing-library/react";
-import React, { Component } from "react";
-import './styles/Dashboard.css';
+import React from 'react';
+import 'office-ui-fabric-react/dist/css/fabric.css';
 
-const Dashboard = () => {
-  render(); {
-    return(
-      <div className="Main-Dashboard">
-        <h1>Dashboard</h1>
+import DashNav from './DashNav.js';
+
+function Dashboard() {
+  return (
+    <div className="ms-Grid" dir="ltr">
+      <div className="ms-Grid-row">
+        <div className="ms-Grid-col ms-sm-1 ms-xl1">
+          <DashNav />
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Dashboard;
