@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function RepCounter() {
-
-  return (
-    <div className="App">
-      <h1>Rep Counter</h1>
-    </div>
-  );
+class RepCounter extends Component {
+    render() {
+        return <div>
+            <h1>Rep Counter</h1>
+        </div>
+    }
 }
-
 
 export default RepCounter;

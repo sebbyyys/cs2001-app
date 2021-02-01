@@ -6,15 +6,10 @@ import Dashboard from "./Components/Dashboard/Dashboard.js";
 import Exercises from "./Components/Exercises/Exercises.js";
 import RepCounter from "./Components/RepCounter/RepCounter.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { CardDeck } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-import Footer from "./Components/Footer/Footer.js";
-import SignIn from "./SignIn.js";
-import { Button } from "react-bootstrap";
-import Login from "./Components/Nav/Login.js";
-import Logout from "./Components/Nav/Logout.js";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./Components/theme.js";
+import Footer from './Components/Footer/Footer.js';
+;
 
 function App() {
   return (
@@ -26,16 +21,19 @@ function App() {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/Exercises" component={Exercises} />
-              <Route path="/Rep-Counter" component={RepCounter} />
+              <Route path="/RepCounter" component={RepCounter} />
               <Route path="/Dashboard" component={Dashboard} />
-              <Route path="/Sign-In" component={SignIn} />
             </Switch>
           </div>
         </div>
+        <Footer />
       </Router>
     </ThemeProvider>
   );
 }
+
+
+
 
 // const Home = () => {
 //   return (
