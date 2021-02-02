@@ -20,7 +20,7 @@ const links = [
                 }
             },
             {
-                name: 'Settings',
+                name: 'My Exercises',
                 url: '/Dashboard',
                 key: 'key2',
                 iconProps: {
@@ -56,7 +56,8 @@ const links = [
                     styles: {
                         root: {
                             fontSize: 20,
-                            color: '#106ebe'
+                            color: '#106ebe',
+                            nameColor: '#00ccff'
                         }
                     }
                 }
@@ -73,6 +74,7 @@ const navigationStyles = {
         position: 'fixed',
         overflowY: 'auto',
         paddingTop: '10vh',
+        borderColor: '#eee',
     }
 }
 

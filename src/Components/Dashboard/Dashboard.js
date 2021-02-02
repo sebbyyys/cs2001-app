@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'office-ui-fabric-react/dist/css/fabric.css';
-import ChartistGraph from 'react-chartist'
+import ChartistGraph from 'react-chartist';
+
 
 import DashNav from './DashNav.js';
 import CardsSection from './CardsSection';
@@ -42,7 +43,6 @@ class Dashboard extends Component {
                 <CardsSection />
               </div>
               <div className="ms-Grid-row">
-
                 <div className="ms-Grid-col ms-sm4 ms-xl3 main-element">
                   <div className="card ">
                     <div className="card-header ">
@@ -53,13 +53,13 @@ class Dashboard extends Component {
                       <ChartistGraph data={dataPie} type="Pie" />
                       <div className="legend">
                         <i className="fa fa-circle text-info"></i> 1
-                                        <i className="fa fa-circle text-danger"></i> 2
-                                        <i className="fa fa-circle text-warning"></i> 3
-                                    </div>
+                          <i className="fa fa-circle text-danger"></i> 2
+                          <i className="fa fa-circle text-warning"></i> 3
+                      </div>
                       <hr />
                       <div className="stats">
                         <i className="fa fa-clock-o"></i> Updated ___ Ago
-                                    </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -77,24 +77,23 @@ class Dashboard extends Component {
                         <i className="fa fa-circle text-info"></i> 1
                     <i className="fa fa-circle text-danger"></i> 2
                     <i className="fa fa-circle text-warning"></i> 3
-                </div>
+                      </div>
                       <hr />
                       <div className="stats">
                         <i className="fa fa-history"></i> Updated ___ Ago
-                  </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
-
-
-
         </div>
       </div>
+
+
+
+      
 
     );
   }

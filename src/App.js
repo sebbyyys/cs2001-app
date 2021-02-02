@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./Components/theme.js";
 import Footer from './Components/Footer/Footer.js';
-;
+
 
 function App() {
   return (
